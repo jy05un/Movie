@@ -1,15 +1,15 @@
-import Button from "./Button";
-import styles from './App.module.css'
-import { useState } from 'react'
-
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Detail from './routes/Detail';
+import Home from './routes/Home';
 
 function App() {
-  const [counter, setValue] = useState()
   return (
-    <div>
-      <h1 className={styles.title}>Welcome back to React!</h1>
-      <Button text={'Continue'} />
-    </div>
+    <Router>
+      <Routes>
+        <Route path='/movie/:id' element={<Detail />} />
+        <Route path='/' element={<Home />} />
+      </Routes>
+    </Router>
   );
 }
 
